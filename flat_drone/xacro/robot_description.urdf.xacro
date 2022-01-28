@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- Name your robot here -->
+<robot name ="flat_drone" xmlns:xacro="http://wiki.ros.org/xacro">
+
+	<xacro:include filename="$(find flat_drone)/urdf/flat_drone.urdf"/>
+
+	<!--  Gazebo plugin for control here is already added for you -->
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/flat_drone</robotNamespace>
+			<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+			<legacyModeNS>true</legacyModeNS>
+		</plugin>
+	</gazebo>
+
+</robot>	
+

@@ -1,0 +1,32 @@
+<launch>
+    <arg name="robot_name"/>
+    <arg name="init_pose"/>
+
+    
+    <node name="spawn_parcel" pkg="gazebo_ros" type="spawn_model"
+    args="-file $(find Parcel_Assem)/urdf/Parcel_Assem.urdf -urdf -model Parcel_Assem"
+    output="screen" />
+
+    <!-- start robot state publisher -->
+    <node 
+        name="fake_joint_calibration" 
+        pkg="rostopic" 
+        type="rostopic" 
+        args="pub /calibrated std_msgs/Bool true"
+        output="screen"/>
+</launch>
+
+
+<group ns="scalable_arm">
+        <!-- <param name="tf_prefix" value="arm_tf" /> -->
+        <include file="$(find scalable_arm)/launch/single_arm.launch" >
+        </include>
+    </group>
+
+    <group ns="parcel">
+        <!-- <param name="tf_prefix" value="arm_tf" /> -->
+        <include file="$(find Parcel_Assem)/launch/single_parcel.launch" >
+            <arg name="init_pose" value="-x 1 -y 0 -z 0" />
+            <arg name="robot_name"  value="parcel" />
+        </include>
+    </group>

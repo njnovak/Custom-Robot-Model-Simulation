@@ -1,0 +1,76 @@
+# Robot name goes here
+build_quad_bot: # change the name
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  joint_motor_controller:
+    type: velocity_controllers/JointGroupVelocityController
+    joints:
+      - front_right_rotor_joint
+      - front_left_rotor_joint
+      - rear_right_rotor_joint
+      - rear_left_rotor_joint
+
+  gazebo_ros_control:
+    pid_gains:  
+      front_left_rotor_joint:
+        p: 10000
+        i: 1
+        d: 1000
+      front_right_rotor_joint:
+        p: 10000
+        i: 1
+        d: 1000
+      rear_left_rotor_joint:
+        p: 10000
+        i: 1
+        d: 1000
+      rear_right_rotor_joint:
+        p: 10000
+        i: 1
+        d: 1000
+      arm_body_controller:
+        p: 100
+        i: 1
+        d: 1
+      arm_mid_controller:
+        p: 100
+        i: 1
+        d: 1
+      arm_end_controller:
+        p: 100
+        i: 1
+        d: 1
+      left_finger_controller:
+        p: 100
+        i: 1
+        d: 1
+      right_finger_controller:
+        p: 100
+        i: 1
+        d: 1
+      
+      
+  # Controller 1
+  arm_body_controller: # change the name
+    type: velocity_controllers/JointVeloctyController # Type of controller. 
+    joint: arm_joint_1 # Name of the joint.  
+
+  # Controller 2
+  arm_mid_controller: # change the name
+    type: velocity_controllers/JointVeloctyController # Type of controller. 
+    joint: arm_joint_2 # Name of the joint.  
+
+  arm_end_controller: # change the name
+    type: velocity_controllers/JointVeloctyController # Type of controller. 
+    joint: arm_joint_3 # Name of the joint.  
+
+  right_finger_controller: # change the name
+    type: velocity_controllers/JointVeloctyController # Type of controller. 
+    joint: right_finger_joint # Name of the joint.  
+
+  left_finger_controller: # change the name
+    type: velocity_controllers/JointVeloctyController # Type of controller. 
+    joint: left_finger_joint # Name of the joint.  

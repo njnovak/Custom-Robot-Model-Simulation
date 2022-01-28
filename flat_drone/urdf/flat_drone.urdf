@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="flat_drone">
+  <link name="dummy_link"></link>
+    <joint
+      name="dummy_joint"
+      type="fixed">
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <parent
+        link="dummy_link" />
+      <child
+        link="chassis" />
+    </joint>
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="0.158252280467528 0.18037620453903 0.219588795554135"
+        rpy="0 0 0" />
+      <mass
+        value="0.894063156436566" />
+      <inertia
+        ixx="0.00864147938306697"
+        ixy="-2.12588363777296E-11"
+        ixz="1.45183918634266E-15"
+        iyy="0.00864147950443815"
+        iyz="1.29740786190204E-15"
+        izz="0.0165526190624553" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <!-- <link
+    name="arm_link_1">
+    <inertial>
+      <origin
+        xyz="-6.99440505513849E-15 0.0268207413750808 -3.26717541909716E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.0160008840887284" />
+      <inertia
+        ixx="3.78350929688554E-06"
+        ixy="-6.50188471623441E-19"
+        ixz="-7.45032627632284E-17"
+        iyy="9.62878633502828E-07"
+        iyz="-8.3992364225598E-15"
+        izz="3.77371898445663E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/arm_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/arm_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint_1"
+    type="continuous">
+    <origin
+      xyz="0.15825 -0.17599 0.18038"
+      rpy="3.1416 1.5664 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="arm_link_1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="arm_link_2">
+    <inertial>
+      <origin
+        xyz="-3.59027252372357E-11 0.0171389611810903 -1.14747905621826E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.015412817224867" />
+      <inertia
+        ixx="1.2375317566286E-06"
+        ixy="3.46534000873733E-16"
+        ixz="-1.74141739909133E-21"
+        iyy="1.39129115753313E-06"
+        iyz="1.0991710872083E-15"
+        izz="1.86451368903514E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/arm_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/arm_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="-1.5736 0 0" />
+    <parent
+      link="arm_link_1" />
+    <child
+      link="arm_link_2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.5"
+      effort="0"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="arm_link_3">
+    <inertial>
+      <origin
+        xyz="3.91389698428668E-12 -5.65264501872775E-12 -0.00892515663531421"
+        rpy="0 0 0" />
+      <mass
+        value="0.00403734356698192" />
+      <inertia
+        ixx="2.40149499776059E-07"
+        ixy="-5.71014668062969E-15"
+        ixz="1.98441808633002E-16"
+        iyy="2.88957535111524E-07"
+        iyz="-3.5682395783805E-16"
+        izz="3.10565959249786E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/arm_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/arm_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint_3"
+    type="continuous">
+    <origin
+      xyz="0 0.034893 0"
+      rpy="-1.5708 -0.0066035 3.1416" />
+    <parent
+      link="arm_link_2" />
+    <child
+      link="arm_link_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="left_finger_link">
+    <inertial>
+      <origin
+        xyz="0.00161872235886423 0.0187141743932989 -1.02999999926356E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00261369562305155" />
+      <inertia
+        ixx="3.64435595797179E-07"
+        ixy="8.26652357401406E-09"
+        ixz="-3.37076099615359E-23"
+        iyy="3.68591080594806E-08"
+        iyz="-2.68510581652955E-24"
+        izz="3.64980509944123E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/left_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/left_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_finger_joint"
+    type="revolute">
+    <origin
+      xyz="0.0073611 0 -0.016236"
+      rpy="-1.5708 0.011968 0" />
+    <parent
+      link="arm_link_3" />
+    <child
+      link="left_finger_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="0"
+      effort="0"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="right_finger_link">
+    <inertial>
+      <origin
+        xyz="0.00161872235886465 0.0187141743932994 1.0299999989305E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00261369562305155" />
+      <inertia
+        ixx="3.64435595797179E-07"
+        ixy="8.26652357401405E-09"
+        ixz="-3.49483808803654E-23"
+        iyy="3.68591080594805E-08"
+        iyz="4.47453012602903E-22"
+        izz="3.64980509944123E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/right_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.8 0.8 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://flat_drone/meshes/right_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_finger_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0073611 0 -0.016236"
+      rpy="-1.5708 0.0081524 -3.1416" />
+    <parent
+      link="arm_link_3" />
+    <child
+      link="right_finger_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.5"
+      effort="0"
+      velocity="0.5" />
+    <mimic
+      joint="left_finger_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint> -->
+<!-- 
+  <transmission name="arm_body_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="arm_joint_1">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="arm_body_servo">
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="arm_mid_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="arm_joint_2">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="arm_body_servo">
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="arm_end_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="arm_joint_3">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="arm_end_servo">
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_finger_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="right_finger_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="right_finger_servo">
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="left_finger_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="left_finger_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="left_finger_servo">
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission> -->
+</robot>

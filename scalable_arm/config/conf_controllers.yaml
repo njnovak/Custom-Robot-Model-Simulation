@@ -1,0 +1,84 @@
+# Robot name goes here
+scalable_arm: # change the name
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # gazebo_ros_control:
+  #   pid_gains:  
+  #     arm_joint_1:
+  #       p: 1000
+  #       i: 0
+  #       d: 10
+  #     arm_joint_2:
+  #       p: 1000
+  #       i: 0
+  #       d: 10
+  #     arm_joint_3:
+  #       p: 1000
+  #       i: 0
+  #       d: 10
+  #     arm_joint_4:
+  #       p: 1000
+  #       i: 0
+  #       d: 10
+  #     arm_joint_5:
+  #       p: 1000
+  #       i: 0
+  #       d: 10
+  #     arm_joint_6:
+  #       p: 1000
+  #       i: 0
+  #       d: 10
+  #     finger_1_joint:
+  #       p: 1000
+  #       i: 0
+  #       d: 10
+  #     finger_2_joint:
+  #       p: 1000
+  #       i: 0
+  #       d: 10
+      
+      
+  # Controller 1
+  arm_controller_1: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: arm_joint_1 # Name of the joint.  
+    pid: {p: 1.3, i: 0.2 , d: 0.0001}
+  # Controller 2
+  arm_controller_2: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: arm_joint_2 # Name of the joint.  
+    pid: {p: 1.3, i: 0.2 , d: 0.0001}
+  # Controller 3
+  arm_controller_3: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: arm_joint_3 # Name of the joint.  
+    pid: {p: 1.3, i: 0.2 , d: 0.0001}
+  # Controller 4
+  arm_controller_4: # ch4nge the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: arm_joint_4 # Name of the joint.  
+    pid: {p: 1.3, i: 0.2 , d: 0.0001}
+  # Controller 5
+  arm_controller_5: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: arm_joint_5 # Name of the joint.  
+    pid: {p: 1.3, i: 0.2 , d: 0.0001}
+  # Controller 6
+  arm_controller_6: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: arm_joint_6 # Name of the joint.  
+    pid: {p: 1.3, i: 0.2 , d: 0.0001}
+  # Left finger controller
+  finger_1_controller: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: finger_1_joint # Name of the joint. 
+    pid: {p: 1.3, i: 0.2 , d: 0.0001}
+  # Right finger controller
+  finger_2_controller: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: finger_2_joint # Name of the joint.  
+    pid: {p: 1.3, i: 0.2 , d: 0.0001}
+ 

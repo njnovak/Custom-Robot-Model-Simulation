@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- Name your robot here -->
+<robot name ="build_quad_bot" xmlns:xacro="http://wiki.ros.org/xacro">
+
+	<xacro:include filename="$(find build_quad_bot)/urdf/build_quad_bot.urdf"/>
+
+	<!--  Gazebo plugin for control here is already added for you -->
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/build_quad_bot</robotNamespace>
+			<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+			<legacyModeNS>true</legacyModeNS>
+		</plugin>
+	</gazebo>
+
+</robot>	
+

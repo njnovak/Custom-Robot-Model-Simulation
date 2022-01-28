@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="build_quad_bot">
+  <link name="dummy_link"></link>
+    <joint
+      name="dummy_joint"
+      type="fixed">
+      <origin
+        xyz="0.0876850301013811 0.140930562484149 0.183057667225338"
+        rpy="0 0 0" />
+      <parent
+        link="dummy_link" />
+      <child
+        link="chassis" />
+    </joint>
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="0.0876850301013811 0.140930562484149 0.183057667225338"
+        rpy="0 0 0" />
+      <mass
+        value="0.173805362488558" />
+      <inertia
+        ixx="0.00106921691811417"
+        ixy="-1.35887791349452E-09"
+        ixz="-1.52269854390182E-09"
+        iyy="0.00192269791562951"
+        iyz="2.09539461739173E-05"
+        izz="0.00102907706280709" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="front_right_rotor">
+    <inertial>
+      <origin
+        xyz="-1.25975532783151E-09 0.00758907041283063 -1.43444806033344E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00164003513463875" />
+      <inertia
+        ixx="5.40989448385698E-08"
+        ixy="1.62773458690548E-14"
+        ixz="-1.39327498484125E-09"
+        iyy="1.34862675290348E-07"
+        iyz="1.20433157779553E-14"
+        izz="1.65487904386226E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/front_right_rotor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/front_right_rotor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_rotor_joint"
+    type="continuous">
+    <origin
+      xyz="-0.025452 -0.30639 0.14234"
+      rpy="1.5708 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="front_right_rotor" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="1"
+      velocity="1000000" />
+  </joint>
+  <link
+    name="front_left_rotor">
+    <inertial>
+      <origin
+        xyz="-1.25975610498763E-09 0.00758907041283038 -1.43444800482229E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00164003513463868" />
+      <inertia
+        ixx="5.40989448385666E-08"
+        ixy="1.62773563473984E-14"
+        ixz="-1.39327498484251E-09"
+        iyy="1.34862675290317E-07"
+        iyz="1.20433153891088E-14"
+        izz="1.65487904386192E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/front_left_rotor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/front_left_rotor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_rotor_joint"
+    type="continuous">
+    <origin
+      xyz="0.20082 -0.30639 0.14234"
+      rpy="1.5708 0 -0.049308" />
+    <parent
+      link="chassis" />
+    <child
+      link="front_left_rotor" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="1"
+      velocity="1000000" />
+  </joint>
+  <link
+    name="rear_left_rotor">
+    <inertial>
+      <origin
+        xyz="-1.25975604947648E-09 0.00758907041283044 -1.43444803257786E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0016400351346387" />
+      <inertia
+        ixx="5.40989448385674E-08"
+        ixy="1.62773550818133E-14"
+        ixz="-1.39327498484219E-09"
+        iyy="1.34862675290325E-07"
+        iyz="1.20433154334498E-14"
+        izz="1.65487904386201E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/rear_left_rotor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/rear_left_rotor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_rotor_joint"
+    type="continuous">
+    <origin
+      xyz="0.20082 -0.080116 0.14234"
+      rpy="1.5708 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="rear_left_rotor" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="1"
+      velocity="1000000" />
+  </joint>
+  <link
+    name="rear_right_rotor">
+    <inertial>
+      <origin
+        xyz="-1.25975594886252E-09 0.00758907041283052 -1.43444803257786E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00164003513463871" />
+      <inertia
+        ixx="5.40989448385681E-08"
+        ixy="1.62773533793576E-14"
+        ixz="-1.39327498484203E-09"
+        iyy="1.34862675290331E-07"
+        iyz="1.20433154909612E-14"
+        izz="1.65487904386207E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/rear_right_rotor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/rear_right_rotor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_rotor_joint"
+    type="continuous">
+    <origin
+      xyz="-0.025452 -0.080116 0.14234"
+      rpy="1.5708 0 0" />
+    <parent
+      link="chassis" />
+    <child
+      link="rear_right_rotor" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="1"
+      velocity="1000000" />
+  </joint>
+  <link
+    name="arm_link_1">
+    <inertial>
+      <origin
+        xyz="-6.96664947952286E-15 0.0268207413750809 -3.26717819465472E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.016320901770503" />
+      <inertia
+        ixx="3.85917948282325E-06"
+        ixy="-6.63463056448443E-19"
+        ixz="-7.59931755194753E-17"
+        iyy="9.82136206172885E-07"
+        iyz="-8.56722189368362E-15"
+        izz="3.84919336414577E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/arm_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/arm_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint_1"
+    type="revolute">
+    <origin
+      xyz="0.087685 -0.19325 0.10169"
+      rpy="1.5708 0 -0.067967" />
+    <parent
+      link="chassis" />
+    <child
+      link="arm_link_1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1"
+      velocity="10" />
+  </joint>
+  <link
+    name="arm_link_2">
+    <inertial>
+      <origin
+        xyz="2.62121047089892E-10 0.0171389611821341 -1.13826142955631E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.0164917144290169" />
+      <inertia
+        ixx="1.3241589794406E-06"
+        ixy="3.70791524779322E-16"
+        ixz="-1.57164316385075E-21"
+        iyy="1.488681538395E-06"
+        iyz="1.12267046495263E-15"
+        izz="1.99502964721743E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/arm_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/arm_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0.01 0"
+      rpy="1.8591 0 0" />
+    <parent
+      link="arm_link_1" />
+    <child
+      link="arm_link_2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1"
+      velocity="10" />
+  </joint>
+  <link
+    name="arm_link_3">
+    <inertial>
+      <origin
+        xyz="-1.43475342717636E-10 4.2751363560356E-10 -0.00589223823493104"
+        rpy="0 0 0" />
+      <mass
+        value="0.00431995775425361" />
+      <inertia
+        ixx="2.56959987327941E-07"
+        ixy="-5.88728681478884E-15"
+        ixz="-7.34693931103341E-15"
+        iyy="3.09184579804664E-07"
+        iyz="2.80460988043155E-14"
+        izz="3.32305583802294E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/arm_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/arm_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint_3"
+    type="revolute">
+    <origin
+      xyz="0 0.037926 0"
+      rpy="-1.5708 0.18835 -3.1416" />
+    <parent
+      link="arm_link_2" />
+    <child
+      link="arm_link_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-10000"
+      upper="10000"
+      effort="1"
+      velocity="10" />
+  </joint>
+  <link
+    name="left_finger">
+    <inertial>
+      <origin
+        xyz="0.00161872235886462 0.0187141743932983 -1.02999999956888E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00261369562305156" />
+      <inertia
+        ixx="3.64435595797184E-07"
+        ixy="8.26652357401017E-09"
+        ixz="5.85643873687544E-22"
+        iyy="3.68591080594805E-08"
+        iyz="-1.21595550045295E-22"
+        izz="3.64980509944129E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/left_finger.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/left_finger.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_finger_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0073611 0 -0.013203"
+      rpy="-1.5708 0.087153 3.1416" />
+    <parent
+      link="arm_link_3" />
+    <child
+      link="left_finger" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1"
+      velocity="10" />
+  </joint>
+  <link
+    name="right_finger">
+    <inertial>
+      <origin
+        xyz="0.0016187 0.018714 -1.03E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0026137" />
+      <inertia
+        ixx="3.6444E-07"
+        ixy="8.2665E-09"
+        ixz="4.4068E-22"
+        iyy="3.6859E-08"
+        iyz="-9.4299E-23"
+        izz="3.6498E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/right_finger.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://build_quad_bot/meshes/right_finger.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_finger_joint"
+    type="revolute">
+    <origin
+      xyz="0.0073611 0 -0.013203"
+      rpy="-1.5708 0.048185 0" />
+    <parent
+      link="arm_link_3" />
+    <child
+      link="right_finger" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1"
+      upper="1"
+      effort="1"
+      velocity="10" />
+    <mimic
+      joint="left_finger_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+
+  <transmission name="front_right_prop">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="front_right_rotor_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="front_right_motor">
+      <mechanicalReduction>20</mechanicalReduction>
+      <!-- <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface> -->
+    </actuator>
+  </transmission>
+
+  <transmission name="front_left_prop">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="front_left_rotor_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="front_left_motor">
+      <mechanicalReduction>20</mechanicalReduction>
+      <!-- <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface> -->
+    </actuator>
+  </transmission>
+
+  <transmission name="rear_right_prop">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="rear_right_rotor_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="rear_right_motor">
+      <mechanicalReduction>20</mechanicalReduction>
+      <!-- <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface> -->
+    </actuator>
+  </transmission>
+
+  <transmission name="rear_left_prop">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="rear_left_rotor_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="rear_left_motor">
+      <mechanicalReduction>20</mechanicalReduction>
+      <!-- <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface> -->
+    </actuator>
+  </transmission>
+
+  <transmission name="arm_body_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="arm_joint_1">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="arm_body_servo">
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+
+  </transmission>
+   <transmission name="arm_mid_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="arm_joint_2">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="arm_body_servo">
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+   <transmission name="arm_end_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="arm_joint_3">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="arm_end_servo">
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_finger_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="right_finger_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="right_finger_servo">
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="left_finger_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+      <joint name="left_finger_joint">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+    <actuator name="left_finger_servo">
+      <mechanicalReduction>20</mechanicalReduction>
+    </actuator>
+  </transmission>
+</robot>
